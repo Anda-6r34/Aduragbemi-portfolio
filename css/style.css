@@ -1,1 +1,47 @@
-/* css */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    /* FONT FAMILIES */
+    --ff-primary: "Source Sans Pro", Sans-Serif;
+    --ff-secondary: "Source Code Pro", monospace;
+
+    /* FONT WEIGHT */
+    --fw-reg: 300;
+    --fw-bold: 900;
+
+    /* VAIRABLE COLOURS */
+    --clr-light: #ffffff;
+    --clr-dark: #000000ef;
+    --clr-accent: #875849;
+    --clr-black: #000000;
+
+    /* FONT SIZES */
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+
+    /* BOX SHADOWS */
+    --bs: 0.25em 00.25em 0.75em rgba(0, 0, 0, 0.25), 0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
+    /* the first number is the horizontal, the second is the vertical, the third is the blur and a forth can be added which is spread radius. the last is the color. a double shadow can be added by using coma",". */
+}
+
+/* MEDIA QUERY */
+@media (min-width:800px) {
+    :root {
+        /* FONT SIZE */
+        --fs-h1: 4.5rem;
+        --fs-h2: 3.75rem;
+        --fs-h3: 2.25rem;
+        --fs-body: 1.125rem;
+    }
+}
+
+/* GENERAL STYLES */
+html {
+    scroll-behavior: smooth;
+}
