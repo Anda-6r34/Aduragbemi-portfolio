@@ -120,8 +120,7 @@ h3 {
     font-weight: var(--fw-reg);
 }
 
-/* CHECK DESENDANT */
-.section__title--intro>strong {
+.section__title--intro strong {
     display: block;
 }
 
@@ -225,4 +224,172 @@ h3 {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    list-style: none;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.nav__link {
+    color: inherit;
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-h2);
+    text-decoration: none;
+}
+
+.nav__link:hover {
+    color: var(--clr-accent);
+}
+
+/* INTRO SECTION */
+.intro {
+    position: relative;
+}
+
+.intro__img {
+    box-shadow: var(--bs);
+}
+
+
+@media (min-width:600px) {
+    .intro {
+        display: grid;
+        width: min-content;
+        margin: 0 auto;
+        grid-template-areas: "img title" "img subtitle" "img design";
+        column-gap: 1em;
+        grid-template-columns: min-content;
+
+    }
+
+    .intro__img {
+        position: relative;
+        grid-area: img;
+        min-width: 250px;
+        z-index: 2;
+    }
+
+    .section__subtitle--intro {
+        position: relative;
+        left: -1.5em;
+        align-self: flex-start;
+        grid-column: -1/1;
+        grid-row: 2;
+        text-align: right;
+        width: calc(100%+11.5em);
+    }
+
+    .section__subtitle--design {
+        position: relative;
+        left: -1.5em;
+        align-self: flex-start;
+        grid-column: -1/1;
+        grid-row: 3;
+        text-align: right;
+        width: calc(100%+10.5em);
+    }
+
+    .about-me {
+        display: grid;
+        grid-template-columns: 1fr 250px;
+        grid-template-areas: "title" "subtitle img" "text img";
+        column-gap: 2em;
+    }
+
+    .section__title--about {
+        grid-area: title;
+    }
+
+    .section__subtitle--about {
+        grid-column: 1/-1;
+        grid-row: 2;
+        position: relative;
+        left: -1em;
+        width: calc(100%+2em);
+        padding-inline-start: 1em;
+        padding-inline-end: calc(200px+4em);
+    }
+
+    .about-me__img {
+        grid-area: img;
+        position: relative;
+        z-index: 2;
+    }
+}
+
+@media (max-width: 375px; ) {
+    .section__subtitle--about {
+        text-align: center;
+        font-style: var(--fs-body);
+    }
+}
+
+/* MY SERVICES */
+.my-services {
+    background-color: var(--clr-dark);
+    background-image: url(/imgs/Portrait\ formal\ suit\ _\ Free\ Photo.html);
+    color: var(--clr-light);
+    text-align: center;
+}
+
+.section__title--services {
+    position: relative;
+    color: var(--clr-accent);
+}
+
+.section__title--services::after {
+    content: "";
+    display: block;
+    width: 3em;
+    height: 1px;
+    margin: 0.5em auto 1em;
+    background-color: currentColor;
+    opacity: 0.5;
+}
+
+.services {
+    margin-bottom: 5em;
+}
+
+.service {
+    min-width: 200px;
+    margin: 0 auto;
+}
+
+/* MEDIA QUERY */
+@media (min-width:900px) {
+    .services {
+        display: flex;
+        max-width: 1200px;
+        margin-inline: auto;
+    }
+
+    .services+.services {
+        margin-inline-start: 5em;
+    }
+}
+
+/* ABOUT ME */
+.about-me {
+    min-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-me__img {
+    box-shadow: var(--bs);
+}
+
+/* MY PROJECT */
+.my__work {
+
+    background-color: var(--clr-light);
+    text-align: center;
+}
+
+.portfolio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minimax(300px, 1fr));
+    grid-gap: 2em;
+    min-width: 1200px;
+    margin: 0 auto;
 }
